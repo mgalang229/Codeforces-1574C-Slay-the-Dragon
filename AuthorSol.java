@@ -39,9 +39,11 @@ public class AuthorSol {
 					index++;
 				}
 				long ans = Long.MAX_VALUE;
+				//1st case: will increase the hero strength (for attack)
 				if (index > 0) {
 					ans = Math.min(ans, (dragDef - heroPower[index-1]) + Math.max(0, dragAttack - heroTotal + heroPower[index-1]));
 				}
+				//2nd case: will NOT increase the hero strength (for attack)
 				if (index < n) {
 					ans = Math.min(ans, Math.max(0, dragAttack - heroTotal + heroPower[index]));
 				}
